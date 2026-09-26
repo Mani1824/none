@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Startup Resources Centre — Government Schemes & Startup Support</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A; --navy-deep:#101B33; --paper:#F6F1E4; --paper2:#EFE8D6;
+  --marigold:#C97A1F; --green:#3C6E47; --text:#1E2430; --muted:#5B6472; --line:#DCD3BC;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit;margin:0;padding:0}
+html{scroll-behavior:smooth; scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif; background:var(--paper); color:var(--text); line-height:1.55}
+h1,h2,h3{font-family:'IBM Plex Serif',Georgia,serif; color:var(--navy-deep)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky; top:0; z-index:20; background:var(--navy); color:#fff; padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex; align-items:center; justify-content:space-between; height:72px; gap:16px}
+.brand{font-family:'IBM Plex Serif';font-weight:600;font-size:19px}
+.brand span{color:var(--marigold)}
+nav{display:none; gap:20px; font-size:14px}
+nav a{opacity:.88; text-decoration:none}
+nav a:hover{opacity:1; text-decoration:underline}
+@media(min-width:840px){nav{display:flex}}
+.hero{padding:64px 0 56px; border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(28px,4.6vw,44px); line-height:1.15; max-width:16ch}
+.hero p{margin-top:16px; max-width:56ch; color:var(--muted); font-size:17px}
+.filters{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px}
+.chip{border:1px solid var(--navy); color:var(--navy); background:transparent; padding:8px 14px; border-radius:2px; font-size:13.5px; cursor:pointer; font-family:inherit}
+.chip.active{background:var(--navy); color:#fff}
+.cta-row{margin-top:28px; display:flex; gap:14px; flex-wrap:wrap}
+.btn{display:inline-block; padding:12px 22px; border-radius:2px; font-size:15px; text-decoration:none; font-weight:500}
+.btn-primary{background:var(--marigold); color:#fff}
+.btn-outline{border:1px solid var(--navy); color:var(--navy)}
+section{padding:56px 0; border-bottom:1px solid var(--line)}
+section h2{font-size:26px; margin-bottom:8px}
+.eyebrow{color:var(--marigold); font-size:13px; letter-spacing:.02em; margin-bottom:6px}
+.lede{color:var(--muted); max-width:60ch; margin-bottom:32px}
+.grid{display:grid; gap:18px; grid-template-columns:1fr}
+@media(min-width:700px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--paper2); border-left:3px solid var(--navy); padding:22px}
+.card h3{font-size:17px; margin-bottom:8px}
+.card p{color:var(--muted); font-size:14.5px}
+.scheme{background:#fff; border:1px solid var(--line); border-left:4px solid var(--green); padding:20px}
+.scheme[data-cat="central"]{border-left-color:var(--navy)}
+.scheme[data-cat="state"]{border-left-color:var(--marigold)}
+.scheme h3{font-size:16.5px}
+.scheme .tag{display:inline-block; font-size:11.5px; color:var(--muted); border:1px solid var(--line); padding:2px 8px; border-radius:2px; margin:8px 0}
+.scheme p{font-size:14px; color:var(--text)}
+.scheme .meta{margin-top:10px; font-size:12.5px; color:var(--muted); border-top:1px dashed var(--line); padding-top:8px}
+.hidden{display:none !important}
+.two-col{display:grid; gap:32px; grid-template-columns:1fr}
+@media(min-width:800px){.two-col{grid-template-columns:1.1fr .9fr}}
+form{display:flex; flex-direction:column; gap:12px}
+input,select,textarea{font-family:inherit; font-size:15px; padding:11px 12px; border:1px solid var(--line); background:#fff; border-radius:2px}
+label{font-size:13px; color:var(--muted); margin-bottom:-6px}
+.disclaimer{background:var(--paper2); border:1px dashed var(--navy); padding:18px; font-size:13.5px; color:var(--muted); margin-top:32px}
+footer{padding:40px 0; font-size:13.5px; color:var(--muted)}
+footer a{text-decoration:underline}
+.wa-float{position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px)); background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 4px 14px rgba(0,0,0,.25); z-index:30; font-size:26px}
+.blog-item{padding:16px 0; border-bottom:1px solid var(--line)}
+.blog-item:last-child{border-bottom:none}
+.blog-item .date{font-size:12.5px; color:var(--marigold)}
+.map-box{background:var(--paper2); border:1px solid var(--line); padding:20px; font-size:14.5px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141A22;--paper2:#1B222D;--text:#EAE6DA;--muted:#9BA3AE;--line:#2C3542;--navy-deep:#EAE6DA}}
+:root[data-theme="dark"]{--paper:#141A22;--paper2:#1B222D;--text:#EAE6DA;--muted:#9BA3AE;--line:#2C3542;--navy-deep:#EAE6DA}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">Startup <span>Resources</span> Centre</div>
+    <nav>
+      <a href="#schemes">Schemes</a>
+      <a href="#resources">Resources</a>
+      <a href="#services">Services</a>
+      <a href="#updates">Updates</a>
+      <a href="#enquiry">Enquiry</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Hyderabad, Telangana</div>
+    <h1>Your gateway to government schemes, startup support &amp; business resources</h1>
+    <p>A single-window facilitation centre helping entrepreneurs, startups, MSMEs, women and rural innovators discover schemes, subsidies, seed funds and documentation support.</p>
+    <div class="filters" id="quickFilters">
+      <button class="chip active" data-filter="all">All schemes</button>
+      <button class="chip" data-filter="msme">MSME</button>
+      <button class="chip" data-filter="startup">Startup</button>
+      <button class="chip" data-filter="women">Women</button>
+      <button class="chip" data-filter="rural">Rural / Agri</button>
+      <button class="chip" data-filter="loans">Collateral-free loans</button>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/918341011337" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-outline" href="#enquiry">Submit an enquiry</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">About us</div>
+    <h2>Clarity, in a system built on paperwork</h2>
+    <p class="lede">Startup Resources Centre exists so that no eligible entrepreneur is turned away by confusing eligibility criteria or scattered information. We connect people to the right scheme, and help them through the documentation.</p>
+    <div class="grid grid-3">
+      <div class="card"><h3>Aim</h3><p>Make government support discoverable and usable for every entrepreneur, regardless of scale or location.</p></div>
+      <div class="card"><h3>Vision</h3><p>A Telangana where every eligible business accesses the funding and recognition it qualifies for.</p></div>
+      <div class="card"><h3>Values</h3><p>Clarity, Accessibility, Transparency, Empowerment — in every interaction, every document, every referral.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">Services offered</div>
+    <h2>Where entrepreneurs need a hand</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Scheme discovery</h3><p>Matching your business stage and sector to the schemes you actually qualify for.</p></div>
+      <div class="card"><h3>Eligibility guidance</h3><p>Plain-language explanation of criteria before you invest time in an application.</p></div>
+      <div class="card"><h3>Documentation handholding</h3><p>Step-by-step help preparing and filing the paperwork lenders and departments require.</p></div>
+      <div class="card"><h3>Business registration</h3><p>Support with Udyam, DPIIT recognition, FSSAI and GST registration.</p></div>
+      <div class="card"><h3>Mentorship connections</h3><p>Referrals into incubator and mentor networks suited to your sector.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="schemes">
+  <div class="wrap">
+    <div class="eyebrow">Government schemes hub</div>
+    <h2>Search the scheme matrix</h2>
+    <p class="lede">Filter by category above, or read through the full list below. Every scheme links to its official source.</p>
+    <div class="grid grid-2" id="schemeGrid"></div>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="wrap">
+    <div class="eyebrow">Startup resources</div>
+    <h2>Beyond funding</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>DPIIT recognition</h3><p>Guidance on qualifying for and applying for official Startup India recognition.</p></div>
+      <div class="card"><h3>Incubator directory</h3><p>Curated list of incubators relevant to your sector and stage.</p></div>
+      <div class="card"><h3>T-Hub / T-Works ecosystem</h3><p>Introductions into Telangana's flagship innovation ecosystem.</p></div>
+      <div class="card"><h3>Seed funding networks</h3><p>Warm connections to seed and angel networks active in Telangana.</p></div>
+      <div class="card"><h3>IPR facilitation</h3><p>Support navigating patent, trademark and copyright filing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="updates">
+  <div class="wrap">
+    <div class="eyebrow">Knowledge &amp; updates</div>
+    <h2>Latest circulars &amp; deadlines</h2>
+    <div>
+      <div class="blog-item"><div class="date">Check back for updates</div><h3>Government circulars, application deadlines and revised guidelines will appear here.</h3><p style="color:var(--muted);font-size:14px;margin-top:6px">Success case studies from applicants we've supported will also be featured in this feed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="enquiry">
+  <div class="wrap two-col">
+    <div>
+      <div class="eyebrow">Application / enquiry</div>
+      <h2>Tell us what you need</h2>
+      <p class="lede">Share a few details and our team will get back to you with the right scheme and next steps.</p>
+      <form id="enquiryForm">
+        <label for="name">Full name</label>
+        <input id="name" required placeholder="Your name">
+        <label for="mobile">Mobile number</label>
+        <input id="mobile" required placeholder="10-digit mobile number">
+        <label for="stage">Business stage</label>
+        <select id="stage">
+          <option>Idea stage</option>
+          <option>Early revenue</option>
+          <option>Registered MSME</option>
+          <option>Growth stage</option>
+        </select>
+        <label for="scheme">Scheme of interest</label>
+        <select id="scheme">
+          <option>Not sure — please guide me</option>
+          <option>PMEGP</option><option>PMFME</option><option>AIF</option>
+          <option>CGTMSE</option><option>SISFS</option><option>MUDRA</option>
+          <option>SIDBI</option><option>Startup Telangana</option>
+        </select>
+        <label for="doc">Attach document (optional)</label>
+        <input id="doc" type="file">
+        <button class="btn btn-primary" type="submit" style="border:none;cursor:pointer;margin-top:6px">Submit enquiry</button>
+      </form>
+      <p id="formNote" style="margin-top:12px;font-size:13.5px;color:var(--muted)"></p>
+    </div>
+    <div class="map-box">
+      <h3 style="font-family:'IBM Plex Serif';margin-bottom:10px">Prefer to talk directly?</h3>
+      <p>Call or WhatsApp us any time at <strong>+91 83410 11337</strong>.</p>
+      <p style="margin-top:10px">Email: startupresourcecenter@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Contact us</div>
+    <h2>Find us in Madhura Nagar</h2>
+    <div class="two-col">
+      <div class="map-box">
+        <p>#101, Haritha Apartments, A-3<br>H. No: 8-3-222/C/1/13 &amp; 14<br>Madhura Nagar, Hyderabad – 500038, Telangana</p>
+        <p style="margin-top:10px">Phone / WhatsApp: +91 83410 11337</p>
+        <p>Email: startupresourcecenter@gmail.com · napdcl0609@gmail.com</p>
+      </div>
+      <iframe title="map" style="width:100%;min-height:220px;border:1px solid var(--line)" loading="lazy" src="https://www.google.com/maps?q=Madhura+Nagar+Hyderabad&output=embed"></iframe>
+    </div>
+    <div class="disclaimer">
+      <strong>Please note:</strong> Startup Resources Centre provides information, discovery and advisory guidance only. Final loan sanction, subsidy disbursement and eligibility approval rest entirely with the respective government departments, implementing nodal agencies, and lending institutions. Always check the official portal link on each scheme for the current, authoritative details.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Startup Resources Centre · Hyderabad, Telangana · Information provided is for guidance only</div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/918341011337" target="_blank" rel="noopener" aria-label="WhatsApp us">💬</a>
+
+<script>
+const schemes = [
+ {n:"PMEGP",cat:"central msme loans",who:"New micro enterprises (manufacturing &amp; service)",benefit:"Bank-linked margin money subsidy. Project limits ₹50L (Mfg), ₹20L (Service). Upgradation loans up to ₹1 Cr. 15%–35% subsidy by category/location.",badge:"central"},
+ {n:"PMFME",cat:"rural msme",who:"Micro food processors, SHGs, FPOs, Coops",benefit:"Credit-linked capital subsidy of 35% (up to ₹10L per unit). Common infra support up to ₹3 Cr (35%). Seed capital ₹40,000/SHG member.",badge:"central"},
+ {n:"AIF (Agri Infra Fund)",cat:"rural",who:"Farmers, agri-entrepreneurs, startups, PACS",benefit:"3% p.a. interest subvention on loans up to ₹2 Cr for up to 7 years, plus credit guarantee coverage for post-harvest and community assets.",badge:"central"},
+ {n:"CGTMSE",cat:"msme loans",who:"Eligible micro &amp; small enterprises",benefit:"Collateral-free institutional credit support, guarantee coverage up to ₹10 Cr (75%–90% coverage for lenders).",badge:"central"},
+ {n:"SISFS",cat:"startup",who:"DPIIT-recognised startups (&lt;2 yrs incorporated)",benefit:"Up to ₹20L grant for PoC/prototype/trials; up to ₹50L via convertible debentures/debt for commercialisation.",badge:"central"},
+ {n:"MUDRA (PMMY)",cat:"msme loans women",who:"Micro businesses, traders, small manufacturing",benefit:"Collateral-free loans in 4 tiers: Shishu (up to ₹50k), Kishor (₹50k–₹5L), Tarun (₹5L–₹10L), Tarun Plus (₹10L–₹20L).",badge:"central"},
+ {n:"SIDBI Schemes",cat:"msme women loans",who:"MSMEs &amp; informal micro enterprises",benefit:"Direct financing products; PRAYAAS scheme gives ₹50,000–₹5L to informal micro enterprises and women entrepreneurs.",badge:"central"},
+ {n:"Startup Telangana",cat:"startup state",who:"Telangana-registered startups &amp; innovators",benefit:"SGST reimbursement, patent filing reimbursement, recruitment support, performance grants, and rural-impact innovation grants (T-Fund, TSIRI).",badge:"state"},
+];
+const grid = document.getElementById('schemeGrid');
+function render(filter){
+  grid.innerHTML = schemes.filter(s => filter==='all' || s.cat.includes(filter)).map(s => `
+    <div class="scheme" data-cat="${s.badge}">
+      <span class="tag">${s.badge==='state' ? 'Telangana State' : 'Central / GoI'}</span>
+      <h3>${s.n}</h3>
+      <p><strong>For:</strong> ${s.who}</p>
+      <p style="margin-top:6px">${s.benefit}</p>
+      <div class="meta">Last reviewed: Sept 2026 · <a href="https://www.india.gov.in" target="_blank" rel="noopener">Official portal ↗</a></div>
+    </div>`).join('');
+}
+render('all');
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+  c.classList.add('active');
+  render(c.dataset.filter);
+}));
+document.getElementById('enquiryForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  document.getElementById('formNote').textContent = "Thanks — your enquiry has been noted. Our team will reach out on WhatsApp/call shortly.";
+  e.target.reset();
+});
+</script>
+</body>
+</html>
